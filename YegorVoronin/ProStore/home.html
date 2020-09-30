@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <title>ProStore Home</title>
+</head>
+<body id="main-body">
+    <!-- SLIDE NAV -->
+    <div class="slidenav">
+            <input type="text" class="search-items-slide" placeholder="search">
+            <button class="search-slide"><i class="fas fa-search"></i></button>
+    </div>
+    <!-- NAV -->
+    <nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <div class="logo" onclick="returnHome()">
+            <i class="fas fa-campground"></i>
+            <p>ProStore</p>
+        </div>
+        <form action="" class="search-container">
+                <input type="text" class="search-items" placeholder="search">
+                <button class="search"><i class="fas fa-search"></i></button>
+        </form>
+            <div class="cart-logo">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="amount-in-cart">0</div>
+            </div>
+                
+            
+       </nav>
+       <!-- RESULT -->
+<div class="result"> 
+</div>
+<!-- Contact Form -->
+<div class="contactInfo" onclick="closeCart()">
+    <div class="error-msg">Invalid Input</div>
+    <form action="/" method="GET" id="form">
+        <div>
+            <label for="fname">First Name</label>
+            <input type="text" name="firstname" id="fname">
+        </div>
+        <div>
+            <label for="lname">Last Name</label>
+            <input type="text" name='lastname' id="lname">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="" id="email">
+        </div>
+        <div>
+            <label for="number">Contact Number</label>
+            <input type="text" name="number" id="number">
+        </div>
+        <div>
+            <label for="address">Shipping Address</label>
+            <input type="text" name="address" id="address">
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select name="country" id="country">
+                <option value=""></option>
+                <option value="canada">Canada</option>
+                <option value="germany">Germany</option>
+                <option value="japan">Japan</option>
+                <option value="mexico">Mexico</option>
+                <option value="uk">United Kingdom</option>
+                <option value="us">United States</option>
+            </select>
+        </div>
+        <div>
+            <label for="paymentMethod">Payment Method</label>
+            <select name="" id="payment">
+                <option value=""></option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+                <option value="paypal">PayPal</option>
+            </select>
+        </div>
+       <div>
+            <label for="cardInfo">Card Number:</label>
+            <input type="number" disabled = 'true' id="cardNum">
+       </div>
+       <div>
+            <button id="submit" type="submit">Confirm Payment</button>
+            <button id="keep-browsing" onclick="returnHome()">Keep Browsing</button>
+       </div>
+    </form> 
+</div>
+<!-- MODAL -->
+<div class="cart-modal">
+    <ul>
+    
+    </ul>
+    <div id="cartContainer">
+        <button class="pay" onclick="getContactForm()">Proceed and Pay</button>
+        <button class="keepbrowsing" onclick="toggleCart()">Keep Browsing</button>
+        <button class="deleteAll" >Delete All</button>
+        <div class="total">Total: $0.00</div>
+    </div>   
+</div>
+<!-- CONFIRAMTION FILTEr -->
+<div class="confirmation-filter">
+    
+</div>
+
+<div class="removalConfirmation">
+    <div>Are you sure you want to remove All of your items from the cart?</div>
+        <button class="yes" onclick="removeAll()">Yes, I want remove items from the cart</button>
+        <button class="no" onclick="closePopUp()">No, I want to keep my items</button>
+</div>
+<div class="cartAmountWarning">
+    <div>You already have this item in your cart</div>
+        <button class="no" onclick="closePopUp()">Okay, thanks!</button>
+</div>
+
+   <!-- MAIN -->
+   <div class="banner" onclick="closeCart()"></div>
+<div class="items" onclick="closeCart()">
+    <!-- ITEM 1 -->
+    <div class="item" id="tripleSeatKayak">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Triple Seat Kayak</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$211.99</div>
+                <input type="text" value="211.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/kayak2.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Triple Seat Kayak</div>
+                <div class="item-price">$211.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 2 -->
+    <div class="item" id="mountainBicycle">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Mountain Bicycle</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$79.99</div>
+                <input type="text" value="79.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/mt-bicycle.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Mountain Bicycle</div>
+                <div class="item-price">$79.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 3 -->
+    <div class="item" id="bookBag">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Book Bag</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$34.99</div>
+                <input type="text" value="34.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/bookbag.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Book Bag</div>
+                <div class="item-price">$34.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 4 -->
+    <div class="item" id="mediumCanoe">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Medium Canoe</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$329.99</div>
+                <input type="text" value="329.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/canoe.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Medium Canoe</div>
+                <div class="item-price">$329.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 5 -->
+    <div class="item" id="largeRucksack">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Large Rucksack</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$109.99</div>
+                <input type="text" value="109.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/rucksack.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Large Rucksack</div>
+                <div class="item-price">$109.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 6 -->
+    <div class="item" id="beachBicycle">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Beach Bicycle</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$39.99</div>
+                <input type="text" value="39.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/beach-bicycle.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Beach Bicycle</div>
+                <div class="item-price">$39.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 7 -->
+    <div class="item" id="bottle">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Water Steel Bottle</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$11.99</div>
+                <input type="text" value="11.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/bottle.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Steel Water Bottle</div>
+                <div class="item-price">$11.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 8 -->
+    <div class="item" id="hammock">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Hammock</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$85.99</div>
+                <input type="text" value="85.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/hammock.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Hammock</div>
+                <div class="item-price">$85.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 9 -->
+    <div class="item" id="camperCup">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Camper Cup</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$8.99</div>
+                <input type="text" value="8.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/Camper Cup.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Camper Cup</div>
+                <div class="item-price">$8.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 10 -->
+    <div class="item" id="lifeVest">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Life Vest</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$213.99</div>
+                <input type="text" value="23.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/Life Vest.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Life Vest</div>
+                <div class="item-price">$23.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 11 -->
+    <div class="item" id="durableOar">
+        <div class="item-description">
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">Durable Oar</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$12.99</div>
+                <input type="text" value="12.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/PlasticOars.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">Durable Oar</div>
+                <div class="item-price">$12.99</div>
+            </div>
+        </div>     
+    </div>
+    <!-- ITEM 12 -->
+    <div class="item" id="tent">
+        <div class="item-description" >
+            <i class="far fa-times-circle" id="exit"></i>
+            <div class="item-name">3-Person Tent</div>
+            <div class="checkout-info">
+                <div class="item-price" type='number'>$74.99</div>
+                <input type="text" value="74.99">
+                    <select class="men-hat-amount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <button class="add-to-cart" >Add to Cart</button>
+            </div>
+
+                <div class='add-to-cart-confirm'></div>
+            <p class="describe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id eros at purus pulvinar pellentesque sit amet vitae sapien. 
+                Vestibulum sollicitudin lacus nibh, non eleifend justo placerat in. 
+                Nunc tempus lobortis sagittis. Nulla consectetur iaculis tincidunt. 
+                Mauris quis sollicitudin sapien. Pellentesque mattis vehicula consequat. 
+                Sed nec nisl sed lectus volutpat posuere.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="images/tent.jpg" alt="" class="item-images">
+            <div class="item-details">     
+                <div class="item-name">3-Person Tent</div>
+                <div class="item-price">$74.99</div>
+            </div>
+        </div>     
+    </div>
+</div>
+
+
+<script src="main.js">
+</script>
+</body>
+</html>

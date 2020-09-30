@@ -1,0 +1,425 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    user-select: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.body {
+    background-image: url('images/wallpaper.jpg');
+    height: 740px;
+    width: 98%;
+    background-size: cover;
+}
+.box-container{
+    width: 100%;
+    height: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 740px;
+}
+.box-comp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99px;
+    width: 99px;
+}
+.myComp, .myFolder, .network, .myAccounts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+}
+
+.myComp img, .myFolder img, .network img, .myAccounts img {
+    display: flex;
+    height: 70px;
+}
+
+/* LOADING SCREEN*/
+.loading-screen{
+    background-image: url('images/loadng-screen.png');
+    height: 760px;
+    width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-bars{
+    position: relative;
+    top: 91px;
+    right: 55px;
+    height: 11.5px;
+    width: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.loading-bars div{
+    background-color: #245edb;
+    height: 11px;
+    width: 9px;
+    box-shadow: 2px 2px 2px #0c8dea inset;
+    border-radius: 2px;
+    animation-name: load;
+    animation-duration: 1500ms;
+    animation-iteration-count: 4;
+    animation-timing-function: linear;
+}
+
+@keyframes load{
+    from{transform: translateX(0);}
+    to{transform: translateX(85px);}
+}
+
+/* USER SCREEN */
+.user-screen {
+    height: 760px;
+    width: 68%;
+    background-image: url('images/userscreen.png');
+}
+#user {
+    display: flex;
+    position: relative;
+    top: 330px;
+    left: 520px;
+    width: 260px;
+    height: 82px;
+    display: flex;
+    cursor: pointer;
+}
+#user:hover{
+    border-radius: 15px;
+    border-right: 0;
+    background: linear-gradient(to right,#245edb  30%, #0485e0e7 100%);
+}
+#username {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    font-size: 19px;
+}
+
+#profile-image{
+    position: relative;
+    top: 8px;
+    left: 8px;
+    width: 70px;
+    border: 2px solid ivory;
+    border-radius: 5px;
+}
+/*WELCOME SCREEN*/
+.welcome-screen{
+    height: 760px;
+    width: 68%;
+    background-image: url('images/welcome.png');
+}
+.welcome{
+    position: relative;
+    top: 320px;
+    left: 650px;
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+/* OFF CLICKs */
+
+.offClick1{
+    position: relative;
+    top: -740px;
+    height:220px;
+    /*visibility: hidden;*/
+}
+.offClick2{
+    position: relative;
+    top: -740px;
+    position: relative;
+    left: 380px;
+    height:480px;
+    width: 74.7%;
+     /*visibility: hidden;*/
+}
+
+/*TASKBAR*/
+.taskbar{
+    background-color: #245edb;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-shadow: 0px 5px 10px #0c8dea inset;
+    position: relative;
+    top: -1460px;
+}
+
+.start-btn {
+    background-color: #3c873c;
+    width: 115px;
+    height: 40px;
+    border-radius:0px 10px 15px 0px;
+    font-size:18px;
+    font-style:italic;
+    font-weight: 550;
+    letter-spacing: 1px;
+    text-shadow:1px 1px 1px #333;
+    box-shadow: 0px 5px 10px #79ce71 inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+
+}
+.noti-area{
+    background-color: #0c8dea;
+    box-shadow: 0px 5px 10px #70b2e0 inset;
+    height: 40px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* START MENU */
+
+
+
+.startmenu{
+    background-color: ivory;
+    color: black;
+    width: 0px;
+    overflow: hidden;
+    border-radius: 6px 6px 0px 0px;
+    position: relative;
+    top: -1220px;
+}
+
+.user {
+    background-color: #245edb;
+    box-shadow: 0px 2px 5px #70b2e0 inset;
+    text-shadow:1px 1px 1px #333;
+    color: ivory;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-size: 20px; 
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to left, #245edb 1%, orange 50%, #245edb 100%) 
+                0 0 100% 0/1px 0 3px 0 stretch;
+}
+.username {
+    padding-left: 10px;
+}
+
+#profile-pic{
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px solid ivory;
+    border-radius: 5px;
+    box-shadow: 10px #333;
+}
+
+/* APPS */
+.apps {
+    display: flex;
+    justify-content: space-between;
+    height: 350px; 
+    border-left: 2px solid #245edb;
+    border-right: 2px solid #245edb;
+    overflow: hidden;
+
+}
+
+.left-apps ul li{
+    list-style-type: none;
+    background-color: ivory;
+    height: 46px;
+    width: 210px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+#underline{
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to left, ivory 1%, rgb(126, 125, 125) 50%, ivory 100%) 
+                100% 0  0/1px 0 3px 0 stretch;
+}
+#underline1{
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to left,#bae1fd 1%, rgb(126, 125, 125) 50%, #bae1fd 100%) 
+                100% 0  0/1px 0 3px 0 stretch;
+}
+
+.left-apps ul li:hover {
+    background-color: #245edb;
+    color: ivory;
+}
+
+.right-apps ul li {
+    list-style-type: none;
+    background-color: #bae1fd;
+    height: 43.8px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.right-apps ul li:hover {
+    background-color: #245edb;
+    color: ivory;
+}
+.bold-startmenu{
+    font-weight: 550;
+}
+
+.more-programs{
+    display: flex;
+   justify-content: space-evenly; 
+   align-items: center;
+   cursor: pointer;
+   height: 25px;
+   width: 200px;
+   border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to left, ivory 1%, rgb(126, 125, 125) 50%, ivory 100%) 
+                100% 0  0/1px 0 3px 0 stretch;
+}
+.triangle{
+    width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+    border-left: 16px solid #79ce71;
+    box-shadow: 0px 60px 40px #3c873c inset;
+    border-bottom: 10px solid transparent;
+    border-radius: 5px;
+}
+
+.more-programs:hover{
+    background-color: #245edb;
+    color: ivory;
+}
+
+
+/* POWER BUTTONS*/
+.power{
+    height: 50px;
+    background-color: #245edb;
+    box-shadow: 0px 2px 5px #70b2e0 inset;
+    text-shadow:1px 1px 1px #333;
+    color: ivory;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.shutdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+    color: ivory;
+}
+a{
+    text-decoration: none;
+}
+
+
+.log-off{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.logoff-icon{
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid ivory;
+
+}
+.shutdown-icon{
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid ivory;  
+}
+.power div:hover {
+    background-color: #1050db;
+    
+}
+
+/* More Apps*/
+#more-apps{
+   position: relative; 
+   background-color: ivory;
+   left: 180px;
+   width: 0px;
+   height: 240px;
+   top: -775px;
+   color: #333;
+   overflow: hidden;
+}
+#more-apps ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 240px;
+    border: 1px solid #333;
+    border-left: 3px solid #245edb; 
+    
+}
+#more-apps ul li{
+    padding: 2px;
+    font-size: 15px;
+    width: 189px;
+    list-style-type: none;
+}
+#more-apps ul li:hover{
+    background-color: #245edb;
+    color: ivory;
+}
+.screen-warning{
+    display: none;
+}
+@media screen and (max-width: 1400px), (min-width: 1600px){
+    .body{
+        display: none;
+    }
+    .loading-screen{
+        display: none;
+    }
+    .user-screen{
+        display: none;
+    }
+    .welcome-screen{
+        display: none;
+    }
+    .screen-warning{
+        font-size: 28px;
+        position: relative;
+        top: 40px;
+    }
+}
